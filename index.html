@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+	<title>Inscrição Camp Warzone</title>
+
+	<!-- CSS -->
+	<link href="public/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" rel="stylesheet">
+	
+</head>
+<body>
+
+	<div class="container">
+		<h1 style="text-align:center;" id="titulo">CAMPEONATO WARZONE PERSONALIZADO</h1>
+		<h2 style="text-align:center; color: #ffffff">STYLO: DUO</h2>
+
+		<br>
+		<h5 class="form-group" style="text-align: center; color: #ffffff;">As inscrições devem ser preenchidas até dia 12/11/2021, os jogadores adiciononados <br>
+			a lista, serão convidados para a sala do jogo no dia que ocorrerá o campeonato.
+		</h45>
+			<br>
+			<br>
+		<p style="font-size: 15px;">
+			Proibido o uso de Stun.<br>
+			Proibido o uso de gallo 12. 
+		</p>
+		<br>
+		<br>
+		<form method="post" autocomplete="off" name="google-sheets">
+
+			<div class="row">
+					<div class="col-6">
+
+					<div class="form-group">
+						<label id="dados">JOGADOR 1:</label>
+						<input type="text" value="" class="form-control form-control-sm" name="player1" placeholder="Player 1" required>
+					</div>
+			</div>
+					<br>
+			<div class="col-6">
+
+				<div class="form-group">
+						<label> ID BATTLE NET 1:</label>
+						<input type="text" value="" name="id1" class="form-control form-control-sm" placeholder="ID 1" required>
+				</div>
+			</div>
+			</div>
+		
+			<br>
+
+			<div class="row">
+				<div class="col-6">
+
+				<div class="form-group">
+					<label>JOGADOR 2:</label>
+					<input type="text" value="" name="player2" class="form-control form-control-sm" placeholder="Player 2" required>
+				</div>
+		</div>
+				<br>
+		<div class="col-6">
+
+			<div class="form-group">
+					<label> ID BATTLE NET 2:</label>
+					<input type="text" value="" name="id2" class="form-control form-control-sm" placeholder="ID 2" required>
+			</div>
+		</div>
+		</div>
+	
+		<br>
+		<div class="form-group">
+			<input type="submit" name="submit" class="btn-success btn-block" value="Enviar"/>
+		</div>
+		</form>
+		<br>
+		<h6 id="criador"> Criado por Alessandro Fagundes.</h6>
+	</div>
+
+	<script>
+		const scriptURL = ''// vai uma chave hash do google apps que liga a planilha do excel, onde os dados sao passsados em tempo real
+		const form = document.forms['google-sheets']
+	  
+		form.addEventListener('submit', e => {
+		  e.preventDefault()
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then(response => alert("Inscrição realizada com sucesso!"))
+			.catch(error => console.error('ERRO!', error.message))
+		})
+	  </script>
+	  	<a href="https://api.whatsapp.com/send?phone=+5551xxxxxxxxxx&text=Texto%20aqui" // substituir o x pelo numero de culular desejado
+	  		target="_blank"
+	  		style="position:fixed;bottom:20px;right:30px;">
+	  		<svg enable-background="new 0 0 512 512" width="50" height="50" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M256.064,0h-0.128l0,0C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104  l98.4-31.456C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z" fill="#4CAF50"/><path d="m405.02 361.5c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.62-127.46-112.58-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016 0.16 8.576 0.288 7.52 0.32 11.296 0.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744s-7.36 7.68-11.136 12.352c-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z" fill="#FAFAFA"/></svg>
+  		</a>
+	  
+	  <footer>
+		<!-- JS -->
+		<script src="public/js/jquery.js"></script>
+		<script src="public/js/bootstrap.bundle.min.js"></script>
+	</footer>
+	
+</body>
+
+
+</html>
